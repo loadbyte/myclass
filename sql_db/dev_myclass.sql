@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 15, 2017 at 03:17 PM
+-- Generation Time: Aug 15, 2017 at 03:51 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -35,6 +35,13 @@ CREATE TABLE `assignments` (
   `as_u_id` bigint(20) NOT NULL,
   `as_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `assignments`
+--
+
+INSERT INTO `assignments` (`as_id`, `as_name`, `as_desc`, `as_dead`, `as_c_id`, `as_u_id`, `as_ts`) VALUES
+(5, 'safd', 'sdfsf', '16/August/2017 19:08:04', 1, 1, '2017-08-15 13:34:12');
 
 -- --------------------------------------------------------
 
@@ -100,6 +107,13 @@ CREATE TABLE `course_enrolled` (
   `ce_enrolled_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `course_enrolled`
+--
+
+INSERT INTO `course_enrolled` (`ce_id`, `ce_u_id`, `ce_c_id`, `ce_enrolled_ts`) VALUES
+(1, 1, 1, '2017-08-15 13:22:44');
+
 -- --------------------------------------------------------
 
 --
@@ -126,6 +140,14 @@ CREATE TABLE `login_history` (
   `lh_u_id` bigint(20) NOT NULL,
   `lh_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login_history`
+--
+
+INSERT INTO `login_history` (`lh_id`, `lh_u_id`, `lh_ts`) VALUES
+(1, 1, '2017-08-15 13:22:16'),
+(2, 1, '2017-08-15 13:32:59');
 
 -- --------------------------------------------------------
 
@@ -178,7 +200,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `u_name`, `u_email`, `u_pass`, `u_roll_num`, `u_role`, `u_default_c_id`, `u_ts`) VALUES
-(1, 'admin', 'admin@myclass.com', 'dd14b9cc821618050366fb5ee5a55e82', 0, 3, 0, '2017-08-15 13:16:35');
+(1, 'admin', 'admin@myclass.com', 'dd14b9cc821618050366fb5ee5a55e82', 0, 3, 1, '2017-08-15 13:22:49');
 
 -- --------------------------------------------------------
 
@@ -271,7 +293,7 @@ ALTER TABLE `user_group`
 -- AUTO_INCREMENT for table `assignments`
 --
 ALTER TABLE `assignments`
-  MODIFY `as_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `as_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `assign_submission`
 --
@@ -291,7 +313,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `course_enrolled`
 --
 ALTER TABLE `course_enrolled`
-  MODIFY `ce_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ce_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `groups`
 --
@@ -301,7 +323,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `login_history`
 --
 ALTER TABLE `login_history`
-  MODIFY `lh_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `lh_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `studcontrib`
 --
